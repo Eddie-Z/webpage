@@ -26,4 +26,45 @@ body {
     background-size: cover; /*always tries to cover*/
     background-position: top; /* make sure image doesn't get croped */
     clip-path: polygon(0 0,100% 0, 100% 90%,0 100%);
+    position:relative;
+}
+
+.logo-box{
+    position:absolute;
+    top:40px;
+    left:40px; /* measurement starts from reference parent */
+}
+
+.logo{
+    height:55px; /*width will be set by browser. can set either one8? */
+}
+
+.text-box{
+    position:absolute;
+    top:40%; /*50% left of parent */
+    left:50%;
+    width:1500px;
+    transform: translate(-35%,-30%); /*in relation for itself*/
+}
+.heading-primary{
+    color: #fff;
+    text-transform:uppercase;
+}
+
+.heading-primary-main{
+    color: #fff;
+    text-transform:uppercase;
+    display:block; /*occupy entire space and create line breaks after them*/
+    font-size:60px;
+    font-weight:400;
+    letter-spacing: 35px;
+    
+}
+.heading-primary-sub{
+    color: #fff;
+    text-transform:uppercase;
+    display:block;
+    font-weight:400;
+    font-size:20px;
+    letter-spacing:15px;
 }
