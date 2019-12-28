@@ -1,18 +1,27 @@
 /*noramlize and remove all default*/
-* {
+*,
+*::after,
+*::before {
     margin:0;
     padding: 0;
-    box-sizing: border-box; /* excludes padding from being included to calculate h/w. h+w+padding= w/o border-box*/
+    box-sizing:inherit/*good practice*/
+
+}
+
+html {
+    font-size:62.5%; /*set root 10/16 16px is default 10px is what we want*/
+    /*adjust when user changes font size or zoom in*/
 }
 
 /*font usually specified here */
 body {
     font-family: "Lato",sans-serif;
     font-weight:1000;
-    font-size:16px;
+    font-size:1.6rem;
     line-height:1.7;
     color:#777;
-    padding:30px;
+    padding:3rem; /*30px*/
+    box-sizing: border-box; /* excludes padding from being included to calculate h/w. h+w+padding= w/o border-box*/
 }
 
 
@@ -31,19 +40,19 @@ body {
 
 .logo-box{
     position:absolute;
-    top:40px;
-    left:40px; /* measurement starts from reference parent */
+    top:4rem;
+    left:4rem; /* measurement starts from reference parent */
 }
 
 .logo{
-    height:55px; /*width will be set by browser. can set either one8? */
+    height:5.5rem; /*width will be set by browser. can set either one8? */
 }
 
 .text-box{
     position:absolute;
     top:40%; /*50% left of parent */
     left:50%;
-    width:1500px;
+    width:1500rem;
     transform: translate(-50%,-30%); /*in relation for itself*/
     text-align:center;
     
@@ -52,16 +61,16 @@ body {
     color: #fff;
     text-transform:uppercase;
     backface-visibility: hidden; /*back part of element becomes hidden to fix shake*/
-    margin-bottom:60px;
+    margin-bottom:6rem;
 }
 
 .heading-primary-main{
     color: #fff;
     text-transform:uppercase;
     display:block; /*occupy entire space and create line breaks after them*/
-    font-size:60px;
+    font-size:6rem;
     font-weight:400;
-    letter-spacing: 35px;
+    letter-spacing: 3.5rem;
     animation-name:moveInLeft; /*two things have to specify*/
     animation-duration:1s;
     animation-timing-function: ease-in;
@@ -73,8 +82,8 @@ body {
     text-transform:uppercase;
     display:block;
     font-weight:400;
-    font-size:20px;
-    letter-spacing:15px;
+    font-size:2rem;
+    letter-spacing:1.5rem;
     animation-name: moveInRight;
     animation-duration: 1s;
     animation-timing-function: ease-in;
@@ -85,11 +94,11 @@ body {
 @keyframes moveInLeft{
     0%{
         opacity:0; /*browsers optimizied for opacity/transform*/
-        transform: translateX(-100px);
+        transform: translateX(-10rem);
     }
 
     80%{
-        transform: translateX(10px);
+        transform: translateX(1rem);
     }
 
     100%{
@@ -101,11 +110,11 @@ body {
 @keyframes moveInRight{
     0%{
         opacity:0; /*browsers optimizied for opacity/transform*/
-        transform: translateX(100px);
+        transform: translateX(10rem);
     }
 
     80%{
-        transform: translateX(-10px);
+        transform: translateX(-1rem);
     }
 
     100%{
@@ -118,19 +127,19 @@ body {
 .btn:visited{ /*special state*/
     text-transform:uppercase;
     text-decoration:none;
-    padding:15px 40px;
+    padding:1.5rem 4rem;
     display:inline-block; /*always do if you want padding on elements*/
-    border-radius:100px;
+    border-radius:10rem;
     transition:all .2s;
     position:relative /*for the pseudo element*/
 }
 .btn:hover{
-    transform:translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,.2);
+    transform:translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
 }
 .btn:active{
-    transform:translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    transform:translateY(-0.1rem);
+    box-shadow: 0 5rem 1rem rgba(0,0,0,.2);
 }
 .btn-white{
     background-color: #fff;
@@ -141,7 +150,7 @@ body {
     display:inline-block; /*same as befoer*/
     height:100%;
     width:100%;
-    border-radius:100px;
+    border-radius:10rem;
     position:absolute;
     top:0;
     left:0;
@@ -160,7 +169,7 @@ body {
 @keyframes moveInBottom{
     0%{
         opacity:0; /*browsers optimizied for opacity/transform*/
-        transform: translateY(30px);
+        transform: translateY(3rem);
     }
 
     100%{
