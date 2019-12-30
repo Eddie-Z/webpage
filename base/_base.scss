@@ -1,0 +1,18 @@
+/*noramlize and remove all default*/
+*,
+*::after,
+*::before {
+    margin:0;
+    padding: 0;
+    box-sizing:inherit/*good practice*/
+
+}
+
+html {
+    font-size:62.5%; /*set root 10/16 16px is default 10px is what we want*/
+    /*adjust when user changes font size or zoom in*/
+}
+
+body{
+    box-sizing: border-box; /* excludes padding from being included to calculate h/w. h+w+padding= w/o border-box*/
+}

@@ -1,0 +1,31 @@
+@keyframes moveInLeft{
+    0%{
+        opacity:0; /*browsers optimizied for opacity/transform*/
+        transform: translateX(-10rem);
+    }
+
+    80%{
+        transform: translateX(1rem);
+    }
+
+    100%{
+        opacity:1;
+        transform:translateX(0); /* look what it looks at right now*/
+    }
+}
+
+@keyframes moveInRight{
+    0%{
+        opacity:0; /*browsers optimizied for opacity/transform*/
+        transform: translateX(10rem);
+    }
+
+    80%{
+        transform: translateX(-1rem);
+    }
+
+    100%{
+        opacity:1;
+        transform:translateX(0); /* look what it looks at right now*/
+    }
+}
