@@ -1,9 +1,9 @@
 $color-primary-light:#847ed5b4;
 $color-primary-dark:#8e7ed5b4;
 
-
-
-
+$color-grey-dark: #777;
+$color-white:#fff;
+$color-black:#000;
 
 /*noramlize and remove all default*/
 *,
@@ -43,25 +43,25 @@ body {
     background-position: top; /* make sure image doesn't get croped */
     clip-path: polygon(0 0,100% 0, 100% 90%,0 100%);
     position:relative;
-}
 
-.header__logo-box{
-    position:absolute;
-    top:4rem;
-    left:4rem; /* measurement starts from reference parent */
-}
-
-.header__logo{
-    height:5.5rem; /*width will be set by browser. can set either one8? */
-}
-
-.header__text-box{
-    position:absolute;
-    top:40%; /*50% left of parent */
-    left:50%;
-    width:1500rem;
-    transform: translate(-50%,-30%); /*in relation for itself*/
-    text-align:center;
+    &__logo-box{
+        position:absolute;
+        top:4rem;
+        left:4rem; /* measurement starts from reference parent */
+    }
+    &__logo{
+        height:5.5rem; /*width will be set by browser. can set either one8? */
+    }
+    &__text-box{
+        position:absolute;
+        top:40%; /*50% left of parent */
+        left:50%;
+        width:1500rem;
+        transform: translate(-50%,-30%); /*in relation for itself*/
+        text-align:center;
+        
+    }
+    
     
 }
 .heading-primary{
@@ -69,34 +69,36 @@ body {
     text-transform:uppercase;
     backface-visibility: hidden; /*back part of element becomes hidden to fix shake*/
     margin-bottom:6rem;
+
+    &--main{
+        color: #fff;
+        text-transform:uppercase;
+        display:block; /*occupy entire space and create line breaks after them*/
+        font-size:6rem;
+        font-weight:400;
+        letter-spacing: 3.5rem;
+        animation-name:moveInLeft; /*two things have to specify*/
+        animation-duration:1s;
+        animation-timing-function: ease-in;
+        
+        
+    }
+    &--sub{
+        color: #fff;
+        text-transform:uppercase;
+        display:block;
+        font-weight:400;
+        font-size:2rem;
+        letter-spacing:1.5rem;
+        animation-name: moveInRight;
+        animation-duration: 1s;
+        animation-timing-function: ease-in;
+       
+      
+    }
+    
 }
 
-.heading-primary--main{
-    color: #fff;
-    text-transform:uppercase;
-    display:block; /*occupy entire space and create line breaks after them*/
-    font-size:6rem;
-    font-weight:400;
-    letter-spacing: 3.5rem;
-    animation-name:moveInLeft; /*two things have to specify*/
-    animation-duration:1s;
-    animation-timing-function: ease-in;
-    
-    
-}
-.heading-primary--sub{
-    color: #fff;
-    text-transform:uppercase;
-    display:block;
-    font-weight:400;
-    font-size:2rem;
-    letter-spacing:1.5rem;
-    animation-name: moveInRight;
-    animation-duration: 1s;
-    animation-timing-function: ease-in;
-   
-  
-}
 
 @keyframes moveInLeft{
     0%{
@@ -130,48 +132,56 @@ body {
     }
 }
 
-.btn:link,
-.btn:visited{ /*special state*/
-    text-transform:uppercase;
-    text-decoration:none;
-    padding:1.5rem 4rem;
-    display:inline-block; /*always do if you want padding on elements*/
-    border-radius:10rem;
-    transition:all .2s;
-    position:relative /*for the pseudo element*/
-}
-.btn:hover{
-    transform:translateY(-0.3rem);
-    box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
-}
-.btn:active{
-    transform:translateY(-0.1rem);
-    box-shadow: 0 5rem 1rem rgba(0,0,0,.2);
-}
-.btn--white{
-    background-color: #fff;
-    color:#777
-}
-.btn::after{ /*pseudo element put behind */
-    content: "";
-    display:inline-block; /*same as befoer*/
-    height:100%;
-    width:100%;
-    border-radius:10rem;
-    position:absolute;
-    top:0;
-    left:0;
-    z-index:-1;
-    transition:all 0.4s;
+.btn{
+
+    &:link,
+    &:visited{ /*special state*/
+        text-transform:uppercase;
+        text-decoration:none;
+        padding:1.5rem 4rem;
+        display:inline-block; /*always do if you want padding on elements*/
+        border-radius:10rem;
+        transition:all .2s;
+        position:relative /*for the pseudo element*/
+    }
+    &:hover{
+        transform:translateY(-0.3rem);
+        box-shadow: 0 1rem 2rem rgba($color-black,.2);
+    }
+    &:active{
+        transform:translateY(-0.1rem);
+        box-shadow: 0 5rem 1rem rgba($color-black,.2);
+        &::after{
+            transform: scaleX(1.5) scaleY(1.6);
+            opacity: 0;
+        }
+    
+    }
+    &--white{
+        background-color: #fff;
+        color:#777
+        &::after{
+            background-color:#fff;
+        }
+    }
+    &::after{ /*pseudo element put behind */
+        content: "";
+        display:inline-block; /*same as befoer*/
+        height:100%;
+        width:100%;
+        border-radius:10rem;
+        position:absolute;
+        top:0;
+        left:0;
+        z-index:-1;
+        transition:all 0.4s;
+    }
+
+ 
+   
+
 }
 
-.btn--white::after{
-    background-color:#fff;
-}
-.btn:hover::after{
-    transform: scaleX(1.5) scaleY(1.6);
-    opacity: 0;
-}
 
 @keyframes moveInBottom{
     0%{
