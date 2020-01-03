@@ -8,6 +8,7 @@
         url(../img//typer.jpg);
     background-size: cover; /*always tries to cover*/
     background-position: top; /* make sure image doesn't get croped */
+    --webkit-clip-path: polygon(0 0,100% 0, 100% 90%,0 100%);
     clip-path: polygon(0 0,100% 0, 100% 90%,0 100%);
     position:relative;
 
