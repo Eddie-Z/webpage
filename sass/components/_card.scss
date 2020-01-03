@@ -1,0 +1,50 @@
+.card {
+    perspective: 150rem;
+    -moz-perspective:150rem; //make it work on firefox
+    position:relative; //parent given relative
+    height:50rem;
+
+    &__side{
+        position:absolute; //will change to their width aka. text size
+        top:0;
+        left:0;
+        width:100%;
+        height:50rem; //absolute caused height to collapse. fixed with 50rem
+        backface-visibility: hidden; //hides the back
+
+        background-color: $color-white;
+        color:#fff;
+        height:50rem;
+        transition: all .8s ease;
+        border-radius:3px;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+
+        &--front{
+            background-color:$color-white;
+            &-1{
+                
+            }
+        }
+        &--back{
+            transform:rotateY(180deg);
+            &-1{
+                background-image:linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+            }
+        }
+
+    
+    }
+    &:hover &__side--front{
+        transform:rotateY(-180deg);
+    }
+    &:hover &__side--back{
+        transform:rotateY(0deg);
+    }
+
+    &__picture{
+        &--1{
+            background-image:url(../img/nat-5.img);
+        }
+    }
+}
