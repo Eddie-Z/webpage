@@ -3,3 +3,6 @@
 
 # Thoughts
 * Stop following and start experimenting more
+
+# Website
+* https://eddie-z.github.io/webpage/
